@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://suno-group.github.io/sitemap.xml

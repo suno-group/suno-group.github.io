@@ -1,0 +1,26 @@
+/* Dark theme — token redefinitions only. Figure mats stay white because the
+   scientific figures were authored for a white ground. */
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#101419; --surface:#171c24; --surface-2:#1f2631;
+    --ink:#e6e9ee; --ink-2:#c2c8d2; --muted:#98a1b0;
+    --line:#252c37; --line-strong:#3a4350;
+    --accent:#e8858b; --accent-hover:#f2a0a5; --accent-soft:#3a2327; --on-accent:#1a0d0e;
+    --band-bg:#080a0e; --band-fg:#aeb6c3; --band-heading:#ffffff; --band-line:#1c222c;
+    --mat:#ffffff; --mat-ink:#151b26;
+    --plate:#95949a; --plate-2:#c1bfc0; --plate-ink:#2a2a2e;
+    --focus:#e8858b;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#101419; --surface:#171c24; --surface-2:#1f2631;
+  --ink:#e6e9ee; --ink-2:#c2c8d2; --muted:#98a1b0;
+  --line:#252c37; --line-strong:#3a4350;
+  --accent:#e8858b; --accent-hover:#f2a0a5; --accent-soft:#3a2327; --on-accent:#1a0d0e;
+  --band-bg:#080a0e; --band-fg:#aeb6c3; --band-heading:#ffffff; --band-line:#1c222c;
+  --mat:#ffffff; --mat-ink:#151b26;
+  --plate:#95949a; --plate-2:#c1bfc0; --plate-ink:#2a2a2e;
+  --focus:#e8858b;
+  color-scheme:dark;
+}
