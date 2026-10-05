@@ -28,9 +28,10 @@ GitHub の Organization `suno-group` に、`suno-group.github.io` という名�
 ## 最終更新日
 フッターの「最終更新」は `assets/data/news.js` 冒頭の `window.SITE_UPDATED = "YYYY-MM-DD";` から表示されます。お知らせなどを更新したら、この日付も書き換えてください（HTML の編集は不要です）。
 
-## アクセス解析（Cloudflare Web Analytics など）
-解析サービスから発行される `<script ...></script>` タグを、各 HTML ファイルの `</body>` の直前に貼り付けてください（日本語 7 ページ・英語 7 ページ・`404.html` の計 15 ファイル）。
-サイトを再生成できる場合は、`build.py` の `ANALYTICS_SNIPPET` にタグを入れると全ページに自動で入ります。
+## アクセス解析（Cloudflare Web Analytics）
+全 HTML ファイル（日本語 7 ページ・英語 7 ページ・`404.html` の計 15 ファイル）の `</body>` 直前に、Cloudflare Web Analytics のスニペット（`<!-- Cloudflare Web Analytics --> ... <!-- End Cloudflare Web Analytics -->`）が入っています。
+訪問数・ページ別・国別・参照元などは Cloudflare ダッシュボードの Web Analytics（https://dash.cloudflare.com/?to=/:account/web-analytics）で確認できます。Cookie は使いません。
+スニペットを差し替える場合は、各 HTML の該当行を置き換えるか、`build.py` の `ANALYTICS_SNIPPET` を変更して再生成してください。
 
 ## v32 redesign
 - New visual identity: serif display type (Newsreader / Shippori Mincho) over IBM Plex Sans JP, Plex Mono for specimen labels (Å, positions, years), a cool-grey ground with a single coral accent.
@@ -40,6 +41,7 @@ GitHub の Organization `suno-group` に、`suno-group.github.io` という名�
 - Contact page: the e-mail address is written with `[at]` instead of `@` (no `mailto:` link) to keep it away from address harvesters; a note asks visitors to replace `[at]` with `@`.
 - Fonts load from Google Fonts. Without a network connection the site falls back to system fonts.
 - Removed unused/duplicate files from v31: `assets/img/research/ep3-gi-static.png` (a duplicate of the KOR figure), `assets/video/ox2r-empa.mp4` and its poster (unused, watermarked).
+- Oct 2026: the EP3 video (`assets/video/ep3-gi.mp4`, which was in fact a KOR MD simulation) and its poster were removed; Fig. 3 now uses `assets/img/research/ep3-gi-selectivity.jpg` (EP3–Gi complex with the ICL2 H163 / TM5 R259 close-up). The old video and poster files can be deleted from the repository.
 
 ## お知らせ（News）の追加方法
 お知らせは `assets/data/news.js` の1ファイルで管理します。ここに項目を追加するだけで、Home の「お知らせ」欄（最新4件）と News ページ（全件・年別）に、日本語版・英語版ともに自動で反映されます。HTML を編集する必要はありません。
@@ -78,7 +80,7 @@ Place team photos in `assets/img/team/` using the filenames referenced in `team.
 
 ## Local preview
 Serve the folder with any simple local web server, e.g. `python3 -m http.server` and open http://localhost:8000/ .
-(Opening `index.html` directly also works, but the video needs a web server in some browsers.)
+(Opening `index.html` directly also works.)
 
 ## GitHub Pages
 Upload the contents of this folder to the root of a GitHub repository and enable Pages from the repository settings. The `.nojekyll` file tells GitHub to serve the files as-is.
